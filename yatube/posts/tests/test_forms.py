@@ -13,6 +13,7 @@ from ..models import Group, Post, Comment
 User = get_user_model()
 TEMP_MEDIA_ROOT = tempfile.mkdtemp(dir=settings.BASE_DIR)
 
+
 @override_settings(MEDIA_ROOT=TEMP_MEDIA_ROOT)
 class PostFormTests(TestCase):
     @classmethod
@@ -32,8 +33,8 @@ class PostFormTests(TestCase):
 
     @classmethod
     def tearDownClass(cls):
-            super().tearDownClass()
-            shutil.rmtree(TEMP_MEDIA_ROOT, ignore_errors=True)
+        super().tearDownClass()
+        shutil.rmtree(TEMP_MEDIA_ROOT, ignore_errors=True)
 
     def setUp(self):
         self.guest_user = Client()
@@ -125,7 +126,6 @@ class PostFormTests(TestCase):
         redirect = reverse('login') + '?next=' + reverse('posts:post_create')
         self.assertRedirects(response, redirect)
         self.assertEqual(Post.objects.count(), posts_count)
-
 
     def test_authorized_user_create_comment(self):
         """Проверка создания коментария авторизированным пользователем."""
