@@ -25,7 +25,7 @@
           {% endif %}
           <form method="post" enctype="multipart/form-data"
           {% if is_edit %} 
-              action="{% url 'posts:post_edit' post.id %}" 
+              "{% url 'posts:post_edit' post.id %}" 
           {% else %}
               action="{% url 'posts:post_create' %}" 
           {% endif %} enctype="multipart/form-data">
