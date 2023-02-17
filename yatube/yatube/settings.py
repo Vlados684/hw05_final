@@ -26,11 +26,14 @@ SECRET_KEY = 'u*!u)y6__vtjwee8j0-qtw1c8#*pcse0q@ie-3$&97s-2s$d6b'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    '[::1]',
+    'localhost', 
+    '127.0.0.1', 
+    '[::1]', 
     'testserver',
+    'www.123Vladislav123.pythonanywhere.com',
+    '123Vladislav123.pythonanywhere.com',
 ]
+
 
 POSTS = 10
 
@@ -50,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'debug_toolbar',
     'posts.apps.PostsConfig',
     'users.apps.UsersConfig',
     'core.apps.CoreConfig',
@@ -58,6 +62,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
